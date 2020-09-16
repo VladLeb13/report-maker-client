@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"gui"
+	"manager"
 )
 
 var (
@@ -19,7 +20,12 @@ func main() {
 
 	ctx := context.Background()
 	ctx, cancel := context.WithCancel(ctx)
-	ctx = context.WithValue(ctx, "key", "value")
+
+	mgr := new(manager.AppManager)
+	go func() {
+		mgr.Start()
+	}()
+	ctx = context.WithValue(ctx, "manager", mgr)
 
 	if *isCLI == false {
 		go func() {
@@ -40,11 +46,11 @@ func main() {
 		//даем команду на старт отчета
 	}
 
-	time.Sleep(5 * time.Second)
+	time.Sleep(10 * time.Second)
 	cancel()
 	if err := ctx.Err(); err != nil {
 		fmt.Println(err)
-		time.Sleep(5 * time.Second)
+		time.Sleep(40 * time.Second)
 	}
 
 	return
