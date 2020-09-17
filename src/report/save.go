@@ -1,5 +1,5 @@
 package report
 
-func save() {
+func Save() {
 	//сохраняет отчет локально
 }

@@ -1,23 +1,25 @@
 package main
 
 import (
+	"config"
 	"context"
-	"flag"
-	"fmt"
+	"log"
+	"os"
+	"tools"
 )
 
-var (
-	isCLI            = flag.Bool("cli", false, "use \"-cli\" flag to disable gui")
-	isGenerateReport = flag.Bool("report", false, "use the \"-r\" flag to generate the report")
-)
+//go build -ldflags "-s -H windowsgui" main.go -без консоли
 
 func main() {
-	flag.Parse()
 
-	ctx := context.Background()
+	ctx := tools.AppContex{
+		Context: context.Background(),
+	}
 
-	if err := ctx.Err(); err != nil {
-		fmt.Println(err)
+	err := config.Parse(&ctx)
+	if err != nil {
+		log.Println("configuration read error detected: ", err)
+		os.Exit(1)
 	}
 
 	return

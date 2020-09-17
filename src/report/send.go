@@ -1,5 +1,5 @@
 package report
 
-func send() {
+func Send() {
 	//отправляет отчет
 }
