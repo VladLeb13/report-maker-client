@@ -27,5 +27,8 @@ func TestPrseConfig(t *testing.T) {
 }
 
 func TestCreateReport(t *testing.T) {
-	report.Create()
+	ctx := tools.AppContex{
+		Context: context.Background(),
+	}
+	report.Create(&ctx)
 }

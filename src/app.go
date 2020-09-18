@@ -5,6 +5,7 @@ import (
 	"context"
 	"log"
 	"os"
+	"report"
 	"tools"
 )
 
@@ -21,6 +22,8 @@ func main() {
 		log.Println("configuration read error detected: ", err)
 		os.Exit(1)
 	}
+
+	report.Create(&ctx)
 
 	return
 }
