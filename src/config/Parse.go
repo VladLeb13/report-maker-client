@@ -8,13 +8,6 @@ import (
 	"tools"
 )
 
-type (
-	Config struct {
-		ServerAddress string `json:"address"`
-		SavingFolder  string `json:"folder"`
-	}
-)
-
 func Parse(ctx *tools.AppContex) (err error) {
 	configfile, err := os.Open("config/config.json")
 	if err != nil {
@@ -27,7 +20,7 @@ func Parse(ctx *tools.AppContex) (err error) {
 		return err
 	}
 
-	cnf := &Config{}
+	cnf := &tools.Config{}
 	err = json.Unmarshal(data, &cnf)
 	if err != nil {
 		return err

@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"report"
+	"report/converting"
 	"tools"
 )
 
@@ -24,6 +25,8 @@ func main() {
 	}
 
 	report.Create(&ctx)
+	converting.HTML(&ctx)
+	report.Save(&ctx)
 
 	return
 }
