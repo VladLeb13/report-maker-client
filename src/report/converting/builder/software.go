@@ -63,20 +63,20 @@ func addShared() string {
 	var builder strings.Builder
 
 	builder.WriteString(" <table class=\"tfmt\">")
-	builder.WriteString("<th>Имя</th><th>Путь</th><th>Описание</th>><th>Наименование</th><th>Статус</th>")
+	builder.WriteString("<th>Имя</th><th>Путь</th><th>Описание</th><th>Наименование</th><th>Статус</th>")
 	builder.WriteString("<tbody>")
 
 	for _, unit := range soft.Shared {
 		slice := getValue(unit)
+		builder.WriteString("<tr>")
 		for _, elem := range slice {
-			builder.WriteString("<tr>")
 			for _, value := range elem {
 				builder.WriteString("<td class=\"colfmt\">")
 				builder.WriteString(value)
 				builder.WriteString("</td>")
 			}
-			builder.WriteString("</tr>")
 		}
+		builder.WriteString("</tr>")
 	}
 	builder.WriteString("</tbody>")
 	builder.WriteString("</table>")
@@ -92,15 +92,17 @@ func addStartup() string {
 
 	for _, uint := range soft.Startup {
 		slice := getValue(uint)
+		builder.WriteString("<tr>")
 		for _, elem := range slice {
-			builder.WriteString("<tr>")
+
 			for _, value := range elem {
 				builder.WriteString("<td class=\"colfmt\">")
 				builder.WriteString(value)
 				builder.WriteString("</td>")
 			}
-			builder.WriteString("</tr>")
+
 		}
+		builder.WriteString("</tr>")
 	}
 
 	builder.WriteString("</tbody>")
@@ -112,20 +114,22 @@ func addStartup() string {
 func addUpdate() string {
 	var builder strings.Builder
 	builder.WriteString(" <table class=\"tfmt\">")
-	builder.WriteString("<th>ID</th><th>Описание</th><th>Пользователь</th>><th>Дата установки</th>><th>Комментарий</th>><th>Статус</th><th>Наименование</th>")
+	builder.WriteString("<th>ID</th><th>Описание</th><th>Пользователь</th><th>Дата установки</th><th>Комментарий</th><th>Статус</th><th>Наименование</th>")
 	builder.WriteString("<tbody>")
 
 	for _, unit := range soft.Updates {
 		slice := getValue(unit)
+		builder.WriteString("<tr>")
 		for _, elem := range slice {
-			builder.WriteString("<tr>")
+
 			for _, value := range elem {
 				builder.WriteString("<td class=\"colfmt\">")
 				builder.WriteString(value)
 				builder.WriteString("</td>")
 			}
-			builder.WriteString("</tr>")
+
 		}
+		builder.WriteString("</tr>")
 	}
 
 	builder.WriteString("</tbody>")
@@ -143,15 +147,17 @@ func addPrograms() string {
 
 	for _, unit := range soft.Programs {
 		slice := getValue(unit)
+		builder.WriteString("<tr>")
 		for _, elem := range slice {
-			builder.WriteString("<tr>")
+
 			for _, value := range elem {
 				builder.WriteString("<td class=\"colfmt\">")
 				builder.WriteString(value)
 				builder.WriteString("</td>")
 			}
-			builder.WriteString("</tr>")
+
 		}
+		builder.WriteString("</tr>")
 	}
 
 	builder.WriteString("</tbody>")

@@ -96,15 +96,17 @@ func addRAMs() string {
 
 	for _, unit := range hardware.RAMs {
 		slice := getValue(unit)
+		builder.WriteString("<tr>")
 		for _, elem := range slice {
-			builder.WriteString("<tr>")
+
 			for _, value := range elem {
 				builder.WriteString("<td class=\"colfmt\">")
 				builder.WriteString(value)
 				builder.WriteString("</td>")
 			}
-			builder.WriteString("</tr>")
+
 		}
+		builder.WriteString("</tr>")
 	}
 
 	builder.WriteString("</tbody>")
@@ -122,15 +124,17 @@ func addHDDs() string {
 
 	for _, unit := range hardware.HDDs {
 		slice := getValue(unit)
+		builder.WriteString("<tr>")
 		for _, elem := range slice {
-			builder.WriteString("<tr>")
+
 			for _, value := range elem {
 				builder.WriteString("<td class=\"colfmt\">")
 				builder.WriteString(value)
 				builder.WriteString("</td>")
 			}
-			builder.WriteString("</tr>")
+
 		}
+		builder.WriteString("</tr>")
 	}
 	builder.WriteString("</tbody>")
 	builder.WriteString("</table>")
@@ -147,15 +151,17 @@ func addVolumes() string {
 
 	for _, unit := range hardware.Volumes {
 		slice := getValue(unit)
+		builder.WriteString("<tr>")
 		for _, elem := range slice {
-			builder.WriteString("<tr>")
+
 			for _, value := range elem {
 				builder.WriteString("<td class=\"colfmt\">")
 				builder.WriteString(value)
 				builder.WriteString("</td>")
 			}
-			builder.WriteString("</tr>")
+
 		}
+		builder.WriteString("</tr>")
 	}
 	builder.WriteString("</tbody>")
 	builder.WriteString("</table>")
@@ -172,15 +178,17 @@ func addNICs() string {
 
 	for _, unit := range hardware.NICs {
 		slice := getValue(unit)
+		builder.WriteString("<tr>")
 		for _, elem := range slice {
-			builder.WriteString("<tr>")
+
 			for _, value := range elem {
 				builder.WriteString("<td class=\"colfmt\">")
 				builder.WriteString(value)
 				builder.WriteString("</td>")
 			}
-			builder.WriteString("</tr>")
+
 		}
+		builder.WriteString("</tr>")
 	}
 	builder.WriteString("</tbody>")
 	builder.WriteString("</table>")

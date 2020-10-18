@@ -122,15 +122,17 @@ func addPerfomanceProcess() string {
 
 	for _, unit := range perf.Processes {
 		slice := getValue(unit)
+		builder.WriteString("<tr>")
 		for _, elem := range slice {
-			builder.WriteString("<tr>")
+
 			for _, value := range elem {
 				builder.WriteString("<td class=\"colfmt\">")
 				builder.WriteString(value)
 				builder.WriteString("</td>")
 			}
-			builder.WriteString("</tr>")
+
 		}
+		builder.WriteString("</tr>")
 	}
 
 	builder.WriteString("</tbody>")
