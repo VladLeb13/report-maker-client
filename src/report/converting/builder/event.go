@@ -26,7 +26,7 @@ func addEvents() string {
 	var builder strings.Builder
 
 	builder.WriteString(" <table class=\"tfmt\">")
-	builder.WriteString(" <th>Пользователь</th><th>Файл лога</th><th>Сообщение</th><th>Категория</th><th>Имя ПК</th><th>Данные</th><th>Источник</th><th>Время записи в журнал</th><th>Пользователь</th>")
+	builder.WriteString(" <th>Пользователь</th><th>Файл лога</th><th>Сообщение</th><th>Категория</th><th>Имя ПК</th><th>Источник</th><th>Время записи в журнал</th><th>Пользователь</th>")
 	builder.WriteString("<tbody>")
 
 	for _, unit := range event.List {

@@ -32,7 +32,6 @@ func fillEvents() {
 
 		unit.CategoryString = v.CategoryString
 		unit.ComputerName = v.ComputerName
-		unit.Data = v.Data
 		unit.LogFile = v.LogFile
 		unit.Message = v.Message
 		unit.SourceName = v.SourceName
