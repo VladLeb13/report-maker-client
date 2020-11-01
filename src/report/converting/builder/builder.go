@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"github.com/VladLeb13/report-maker-lib/src/datalib"
+	"github.com/VladLeb13/report-maker-lib"
 )
 
 func getValue(val interface{}) (out []map[string]string) {
