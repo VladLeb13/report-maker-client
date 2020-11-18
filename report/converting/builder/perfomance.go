@@ -40,7 +40,8 @@ func addPerfomanceCPU() string {
 
 	for _, elem := range perf.CPU {
 		val := getValue(elem)
-		builder.WriteString(writeToSpan(val))
+		lines := val.writeInLine()
+		builder.WriteString(lines)
 	}
 	builder.WriteString("</ul>")
 
@@ -54,7 +55,8 @@ func addPerfomanceRAM() string {
 
 	for _, elem := range perf.RAM {
 		val := getValue(elem)
-		builder.WriteString(writeToSpan(val))
+		lines := val.writeInLine()
+		builder.WriteString(lines)
 	}
 	builder.WriteString("</ul>")
 
@@ -68,7 +70,8 @@ func addPerfomanceHDD() string {
 	builder.WriteString("<ul class=\"list\">")
 	for _, elem := range perf.HDD {
 		val := getValue(elem)
-		builder.WriteString(writeToSpan(val))
+		lines := val.writeInLine()
+		builder.WriteString(lines)
 	}
 	builder.WriteString("</ul>")
 
@@ -88,10 +91,9 @@ func addPerfomanceProcess() string {
 	builder.WriteString("<tbody>")
 
 	for _, unit := range perf.Processes {
-		slice := getValue(unit)
-		builder.WriteString("<tr>")
-		builder.WriteString(writeToColfmt(slice))
-		builder.WriteString("</tr>")
+		val := getValue(unit)
+		columns := val.writeInCol()
+		builder.WriteString(columns)
 	}
 
 	builder.WriteString("</tbody>")

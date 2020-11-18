@@ -42,7 +42,9 @@ func addOS() string {
 	builder.WriteString("<ul class=\"list\">")
 
 	val := getValue(soft.OS)
-	builder.WriteString(writeToSpan(val))
+	lines := val.writeInLine()
+	builder.WriteString(lines)
+
 	builder.WriteString("</ul>")
 
 	return builder.String()
@@ -56,10 +58,9 @@ func addShared() string {
 	builder.WriteString("<tbody>")
 
 	for _, unit := range soft.Shared {
-		slice := getValue(unit)
-		builder.WriteString("<tr>")
-		builder.WriteString(writeToColfmt(slice))
-		builder.WriteString("</tr>")
+		val := getValue(unit)
+		columns := val.writeInCol()
+		builder.WriteString(columns)
 	}
 	builder.WriteString("</tbody>")
 	builder.WriteString("</table>")
@@ -73,11 +74,10 @@ func addStartup() string {
 	builder.WriteString("<th>Название</th><th>Команда</th><th>Пользователь</th><th>Наименование</th><th>Расположение</th>")
 	builder.WriteString("<tbody>")
 
-	for _, uint := range soft.Startup {
-		slice := getValue(uint)
-		builder.WriteString("<tr>")
-		builder.WriteString(writeToColfmt(slice))
-		builder.WriteString("</tr>")
+	for _, unit := range soft.Startup {
+		val := getValue(unit)
+		columns := val.writeInCol()
+		builder.WriteString(columns)
 	}
 
 	builder.WriteString("</tbody>")
@@ -93,10 +93,9 @@ func addUpdate() string {
 	builder.WriteString("<tbody>")
 
 	for _, unit := range soft.Updates {
-		slice := getValue(unit)
-		builder.WriteString("<tr>")
-		builder.WriteString(writeToColfmt(slice))
-		builder.WriteString("</tr>")
+		val := getValue(unit)
+		columns := val.writeInCol()
+		builder.WriteString(columns)
 	}
 
 	builder.WriteString("</tbody>")
@@ -113,10 +112,9 @@ func addPrograms() string {
 	builder.WriteString("<tbody>")
 
 	for _, unit := range soft.Programs {
-		slice := getValue(unit)
-		builder.WriteString("<tr>")
-		builder.WriteString(writeToColfmt(slice))
-		builder.WriteString("</tr>")
+		val := getValue(unit)
+		columns := val.writeInCol()
+		builder.WriteString(columns)
 	}
 
 	builder.WriteString("</tbody>")

@@ -10,7 +10,12 @@ import (
 	"github.com/VladLeb13/report-maker-lib/datalib"
 )
 
-func getValue(val interface{}) (out []map[string]string) {
+type reportFields struct {
+	values []map[string]string
+}
+
+func getValue(val interface{}) (rf reportFields) {
+	var out []map[string]string
 	types := reflect.TypeOf(val)
 	values := reflect.ValueOf(val)
 	for i := 0; i < types.NumField(); i++ {
@@ -32,7 +37,7 @@ func getValue(val interface{}) (out []map[string]string) {
 			case "datalib.BIOS":
 
 				tmp := getValue(v.Interface().(datalib.BIOS))
-				for _, el := range tmp {
+				for _, el := range tmp.values {
 					out = append(out, el)
 				}
 
@@ -61,12 +66,14 @@ func getValue(val interface{}) (out []map[string]string) {
 		m[key] = value
 		out = append(out, m)
 	}
+	rf.values = out
 	return
 }
 
-func writeToColfmt(slice []map[string]string) string {
+func (rf *reportFields) writeInCol() string {
 	var builder strings.Builder
-	for _, elem := range slice {
+	builder.WriteString("<tr>")
+	for _, elem := range rf.values {
 
 		for _, value := range elem {
 			builder.WriteString("<td class=\"colfmt\">")
@@ -75,12 +82,14 @@ func writeToColfmt(slice []map[string]string) string {
 		}
 
 	}
+	builder.WriteString("</tr>")
+
 	return builder.String()
 }
 
-func writeToSpan(slice []map[string]string) string {
+func (rf *reportFields) writeInLine() string {
 	var builder strings.Builder
-	for _, m := range slice {
+	for _, m := range rf.values {
 		for key, value := range m {
 			builder.WriteString("<li>")
 			builder.WriteString("<a href=\"\">")

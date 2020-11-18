@@ -30,10 +30,9 @@ func addEvents() string {
 	builder.WriteString("<tbody>")
 
 	for _, unit := range event.List {
-		slice := getValue(unit)
-		builder.WriteString("<tr>")
-		builder.WriteString(writeToColfmt(slice))
-		builder.WriteString("</tr>")
+		val := getValue(unit)
+		columns := val.writeInCol()
+		builder.WriteString(columns)
 	}
 
 	builder.WriteString("</tbody>")

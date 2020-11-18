@@ -46,7 +46,8 @@ func addCPUs() string {
 
 	for _, elem := range hardware.CPUs {
 		val := getValue(elem)
-		builder.WriteString(writeToSpan(val))
+		lines := val.writeInLine()
+		builder.WriteString(lines)
 	}
 	builder.WriteString("</ul>")
 
@@ -59,7 +60,9 @@ func addBoard() string {
 	builder.WriteString("<ul class=\"list\">")
 
 	val := getValue(hardware.Board)
-	builder.WriteString(writeToSpan(val))
+	lines := val.writeInLine()
+	builder.WriteString(lines)
+
 	builder.WriteString("</ul>")
 
 	return builder.String()
@@ -73,10 +76,9 @@ func addRAMs() string {
 	builder.WriteString("<tbody>")
 
 	for _, unit := range hardware.RAMs {
-		slice := getValue(unit)
-		builder.WriteString("<tr>")
-		builder.WriteString(writeToColfmt(slice))
-		builder.WriteString("</tr>")
+		val := getValue(unit)
+		columns := val.writeInCol()
+		builder.WriteString(columns)
 	}
 
 	builder.WriteString("</tbody>")
@@ -93,10 +95,9 @@ func addHDDs() string {
 	builder.WriteString("<tbody>")
 
 	for _, unit := range hardware.HDDs {
-		slice := getValue(unit)
-		builder.WriteString("<tr>")
-		builder.WriteString(writeToColfmt(slice))
-		builder.WriteString("</tr>")
+		val := getValue(unit)
+		columns := val.writeInCol()
+		builder.WriteString(columns)
 	}
 	builder.WriteString("</tbody>")
 	builder.WriteString("</table>")
@@ -112,10 +113,9 @@ func addVolumes() string {
 	builder.WriteString("<tbody>")
 
 	for _, unit := range hardware.Volumes {
-		slice := getValue(unit)
-		builder.WriteString("<tr>")
-		builder.WriteString(writeToColfmt(slice))
-		builder.WriteString("</tr>")
+		val := getValue(unit)
+		columns := val.writeInCol()
+		builder.WriteString(columns)
 	}
 	builder.WriteString("</tbody>")
 	builder.WriteString("</table>")
@@ -131,10 +131,9 @@ func addNICs() string {
 	builder.WriteString("<tbody>")
 
 	for _, unit := range hardware.NICs {
-		slice := getValue(unit)
-		builder.WriteString("<tr>")
-		builder.WriteString(writeToColfmt(slice))
-		builder.WriteString("</tr>")
+		val := getValue(unit)
+		columns := val.writeInCol()
+		builder.WriteString(columns)
 	}
 	builder.WriteString("</tbody>")
 	builder.WriteString("</table>")
