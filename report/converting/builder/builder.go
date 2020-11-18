@@ -5,6 +5,7 @@ import (
 	"log"
 	"reflect"
 	"strconv"
+	"strings"
 
 	"github.com/VladLeb13/report-maker-lib/datalib"
 )
@@ -61,4 +62,35 @@ func getValue(val interface{}) (out []map[string]string) {
 		out = append(out, m)
 	}
 	return
+}
+
+func writeToColfmt(slice []map[string]string) string {
+	var builder strings.Builder
+	for _, elem := range slice {
+
+		for _, value := range elem {
+			builder.WriteString("<td class=\"colfmt\">")
+			builder.WriteString(value)
+			builder.WriteString("</td>")
+		}
+
+	}
+	return builder.String()
+}
+
+func writeToSpan(slice []map[string]string) string {
+	var builder strings.Builder
+	for _, m := range slice {
+		for key, value := range m {
+			builder.WriteString("<li>")
+			builder.WriteString("<a href=\"\">")
+			builder.WriteString(key)
+			builder.WriteString(":</a>")
+			builder.WriteString("<span>")
+			builder.WriteString(value)
+			builder.WriteString("</span>")
+			builder.WriteString("</li>")
+		}
+	}
+	return builder.String()
 }

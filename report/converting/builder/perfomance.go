@@ -40,18 +40,7 @@ func addPerfomanceCPU() string {
 
 	for _, elem := range perf.CPU {
 		val := getValue(elem)
-		for _, m := range val {
-			for key, value := range m {
-				builder.WriteString("<li>")
-				builder.WriteString("<a href=\"\">")
-				builder.WriteString(key)
-				builder.WriteString(":</a>")
-				builder.WriteString("<span>")
-				builder.WriteString(value)
-				builder.WriteString("</span>")
-				builder.WriteString("</li>")
-			}
-		}
+		builder.WriteString(writeToSpan(val))
 	}
 	builder.WriteString("</ul>")
 
@@ -65,18 +54,7 @@ func addPerfomanceRAM() string {
 
 	for _, elem := range perf.RAM {
 		val := getValue(elem)
-		for _, m := range val {
-			for key, value := range m {
-				builder.WriteString("<li>")
-				builder.WriteString("<a href=\"\">")
-				builder.WriteString(key)
-				builder.WriteString(":</a>")
-				builder.WriteString("<span>")
-				builder.WriteString(value)
-				builder.WriteString("</span>")
-				builder.WriteString("</li>")
-			}
-		}
+		builder.WriteString(writeToSpan(val))
 	}
 	builder.WriteString("</ul>")
 
@@ -90,18 +68,7 @@ func addPerfomanceHDD() string {
 	builder.WriteString("<ul class=\"list\">")
 	for _, elem := range perf.HDD {
 		val := getValue(elem)
-		for _, m := range val {
-			for key, value := range m {
-				builder.WriteString("<li>")
-				builder.WriteString("<a href=\"\">")
-				builder.WriteString(key)
-				builder.WriteString(":</a>")
-				builder.WriteString("<span>")
-				builder.WriteString(value)
-				builder.WriteString("</span>")
-				builder.WriteString("</li>")
-			}
-		}
+		builder.WriteString(writeToSpan(val))
 	}
 	builder.WriteString("</ul>")
 
@@ -123,15 +90,7 @@ func addPerfomanceProcess() string {
 	for _, unit := range perf.Processes {
 		slice := getValue(unit)
 		builder.WriteString("<tr>")
-		for _, elem := range slice {
-
-			for _, value := range elem {
-				builder.WriteString("<td class=\"colfmt\">")
-				builder.WriteString(value)
-				builder.WriteString("</td>")
-			}
-
-		}
+		builder.WriteString(writeToColfmt(slice))
 		builder.WriteString("</tr>")
 	}
 

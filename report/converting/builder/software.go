@@ -42,18 +42,7 @@ func addOS() string {
 	builder.WriteString("<ul class=\"list\">")
 
 	val := getValue(soft.OS)
-	for _, m := range val {
-		for key, value := range m {
-			builder.WriteString("<li>")
-			builder.WriteString("<a href=\"\">")
-			builder.WriteString(key)
-			builder.WriteString(":</a>")
-			builder.WriteString("<span>")
-			builder.WriteString(value)
-			builder.WriteString("</span>")
-			builder.WriteString("</li>")
-		}
-	}
+	builder.WriteString(writeToSpan(val))
 	builder.WriteString("</ul>")
 
 	return builder.String()
@@ -69,13 +58,7 @@ func addShared() string {
 	for _, unit := range soft.Shared {
 		slice := getValue(unit)
 		builder.WriteString("<tr>")
-		for _, elem := range slice {
-			for _, value := range elem {
-				builder.WriteString("<td class=\"colfmt\">")
-				builder.WriteString(value)
-				builder.WriteString("</td>")
-			}
-		}
+		builder.WriteString(writeToColfmt(slice))
 		builder.WriteString("</tr>")
 	}
 	builder.WriteString("</tbody>")
@@ -93,15 +76,7 @@ func addStartup() string {
 	for _, uint := range soft.Startup {
 		slice := getValue(uint)
 		builder.WriteString("<tr>")
-		for _, elem := range slice {
-
-			for _, value := range elem {
-				builder.WriteString("<td class=\"colfmt\">")
-				builder.WriteString(value)
-				builder.WriteString("</td>")
-			}
-
-		}
+		builder.WriteString(writeToColfmt(slice))
 		builder.WriteString("</tr>")
 	}
 
@@ -120,15 +95,7 @@ func addUpdate() string {
 	for _, unit := range soft.Updates {
 		slice := getValue(unit)
 		builder.WriteString("<tr>")
-		for _, elem := range slice {
-
-			for _, value := range elem {
-				builder.WriteString("<td class=\"colfmt\">")
-				builder.WriteString(value)
-				builder.WriteString("</td>")
-			}
-
-		}
+		builder.WriteString(writeToColfmt(slice))
 		builder.WriteString("</tr>")
 	}
 
@@ -148,15 +115,7 @@ func addPrograms() string {
 	for _, unit := range soft.Programs {
 		slice := getValue(unit)
 		builder.WriteString("<tr>")
-		for _, elem := range slice {
-
-			for _, value := range elem {
-				builder.WriteString("<td class=\"colfmt\">")
-				builder.WriteString(value)
-				builder.WriteString("</td>")
-			}
-
-		}
+		builder.WriteString(writeToColfmt(slice))
 		builder.WriteString("</tr>")
 	}
 
