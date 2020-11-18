@@ -1,10 +1,10 @@
 package builder
 
 import (
+	"report-maker-client/tools"
 	"strings"
-	"tools"
 
-	"github.com/VladLeb13/report-maker-lib/src/datalib"
+	"github.com/VladLeb13/report-maker-lib/datalib"
 )
 
 var (

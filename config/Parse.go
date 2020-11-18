@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"os"
-	"tools"
+	"report-maker-client/tools"
 )
 
 func Parse(ctx *tools.AppContex) (err error) {

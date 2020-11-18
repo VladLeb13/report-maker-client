@@ -1,10 +1,10 @@
 package fill
 
 import (
-	"tools"
+	"report-maker-client/tools"
 
-	"github.com/VladLeb13/report-maker-lib/src/datalib"
-	"github.com/VladLeb13/report-maker-lib/src/wmilib/software"
+	"github.com/VladLeb13/report-maker-lib/datalib"
+	"github.com/VladLeb13/report-maker-lib/wmilib/software"
 )
 
 var (

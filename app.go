@@ -1,13 +1,13 @@
 package main
 
 import (
-	"config"
 	"context"
 	"log"
 	"os"
-	"report"
-	"report/converting"
-	"tools"
+	"report-maker-client/config"
+	"report-maker-client/report"
+	"report-maker-client/report/converting"
+	"report-maker-client/tools"
 )
 
 //go build -ldflags "-s -H windowsgui" main.go -без консоли

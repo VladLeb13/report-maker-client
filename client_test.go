@@ -1,14 +1,14 @@
 package main
 
 import (
-	"config"
 	"context"
 	"fmt"
 	"log"
-	"report"
-	"report/converting"
+	"report-maker-client/config"
+	"report-maker-client/report"
+	"report-maker-client/report/converting"
+	"report-maker-client/tools"
 	"testing"
-	"tools"
 )
 
 func TestPrseConfig(t *testing.T) {

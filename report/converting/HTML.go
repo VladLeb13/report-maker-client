@@ -2,9 +2,9 @@ package converting
 
 import (
 	"context"
-	"report/converting/builder"
+	"report-maker-client/report/converting/builder"
+	"report-maker-client/tools"
 	"strings"
-	"tools"
 )
 
 var (

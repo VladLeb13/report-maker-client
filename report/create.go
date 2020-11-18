@@ -2,12 +2,12 @@ package report
 
 import (
 	"context"
-	"report/fill"
+	"report-maker-client/report/fill"
+	"report-maker-client/tools"
 	"runtime"
 	"sync"
-	"tools"
 
-	"github.com/VladLeb13/report-maker-lib/src/datalib"
+	"github.com/VladLeb13/report-maker-lib/datalib"
 )
 
 func Create(ctx *tools.AppContex) {
