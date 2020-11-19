@@ -1,6 +1,13 @@
 github.com/StackExchange/wmi v0.0.0-20190523213315-cbe66965904d h1:G0m3OIz70MZUWq3EgK3CesDbo8upS2Vm9/P3FtgI+Jk=
 github.com/StackExchange/wmi v0.0.0-20190523213315-cbe66965904d/go.mod h1:3eOhrUMpNV+6aFIbp5/iudMxNCF27Vw2OZgy4xEx0Fg=
-github.com/VladLeb13/report-maker-lib v1.0.2 h1:LrZv1eAsbK9JhcN2Y2FPHohP1egHBZ+yMxRmtm+W9Gk=
-github.com/VladLeb13/report-maker-lib v1.0.2/go.mod h1:Cywmh7zdiZxKAnuACJnHrHyHRgZqqWD6sIXLfrDIVMM=
+github.com/VladLeb13/report-maker-lib v1.0.4 h1:Dm0/Aem/m9/HONKMK9MmVdi0dmo1tUM1QHLp2ybAa10=
+github.com/VladLeb13/report-maker-lib v1.0.4/go.mod h1:Cywmh7zdiZxKAnuACJnHrHyHRgZqqWD6sIXLfrDIVMM=
+github.com/VladLeb13/report-maker-lib v1.0.5 h1:KvKoOG7LJQlXLM7/PWXVh6PNII+Cn+B+3a3D9mcLnzA=
+github.com/VladLeb13/report-maker-lib v1.0.5/go.mod h1:Cywmh7zdiZxKAnuACJnHrHyHRgZqqWD6sIXLfrDIVMM=
+github.com/VladLeb13/report-maker-lib v1.0.6 h1:5kiln5umtjaql20S5DT/25y32B87Gt3YTi4rh0Gm3Hc=
+github.com/VladLeb13/report-maker-lib v1.0.6/go.mod h1:Cywmh7zdiZxKAnuACJnHrHyHRgZqqWD6sIXLfrDIVMM=
+github.com/VladLeb13/report-maker-lib v1.0.7 h1:uSnuyZIhHIAGKU2/NMLdHMu/R0Af/r60uBFiarYjK9g=
+github.com/VladLeb13/report-maker-lib v1.0.7/go.mod h1:Cywmh7zdiZxKAnuACJnHrHyHRgZqqWD6sIXLfrDIVMM=
 github.com/go-ole/go-ole v1.2.4 h1:nNBDSCOigTSiarFpYE9J/KtEA1IOW4CNeqT9TQDqCxI=
 github.com/go-ole/go-ole v1.2.4/go.mod h1:XCwSNxSkXRo4vlyPy93sltvi/qJq0jqQhjqQNIwKuxM=
+ithub.com/VladLeb13/report-maker-lib v1.0.4 h1:Dm0/Aem/m9/HONKMK9MmVdi0dmo1tUM1QHLp2ybAa10=

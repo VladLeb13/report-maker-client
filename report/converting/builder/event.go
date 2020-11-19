@@ -25,8 +25,8 @@ func Event(ctx *tools.AppContex) string {
 func addEvents() string {
 	var builder strings.Builder
 
-	builder.WriteString(" <table class=\"tfmt\">")
-	builder.WriteString(" <th>Пользователь</th><th>Файл лога</th><th>Сообщение</th><th>Категория</th><th>Имя ПК</th><th>Источник</th><th>Время записи в журнал</th><th>Пользователь</th>")
+	builder.WriteString(" <table class=\"tfmt2\">")
+	builder.WriteString("<thead class=\"tfmt3\"><tr> <td>Пользователь</td><td>Файл лога</td><td class=\"eventMsg\" width=\"400px\">Сообщение</td><td>Время записи в журнал</td></tr></thead>")
 	builder.WriteString("<tbody>")
 
 	for _, unit := range event.List {

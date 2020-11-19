@@ -77,7 +77,7 @@ func (rf *reportFields) writeInCol() string {
 
 		for _, value := range elem {
 			builder.WriteString("<td class=\"colfmt\">")
-			builder.WriteString(value)
+			builder.WriteString(strings.TrimSpace(value))
 			builder.WriteString("</td>")
 		}
 

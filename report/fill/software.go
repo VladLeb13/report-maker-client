@@ -63,13 +63,9 @@ func fillPrograms() {
 	for _, v := range softwareData["programs"].(*software.Programs).List {
 		unit := datalib.Program{}
 
-		unit.Caption = v.Caption
-		unit.Description = v.Description
 		unit.InstallDate = v.InstallDate
 		unit.InstallLocation = v.InstallLocation
 		unit.Name = v.Name
-		unit.RegCompany = v.RegCompany
-		unit.RegOwner = v.RegOwner
 		unit.Vendor = v.Vendor
 		unit.Version = v.Version
 
@@ -118,12 +114,9 @@ func fillUpdates() {
 		unit := datalib.Update{}
 
 		unit.Description = v.Description
-		unit.FixComments = v.FixComments
 		unit.HotFixID = v.HotFixID
 		unit.InstalledBy = v.InstalledBy
 		unit.InstalledOn = v.InstalledOn
-		unit.Name = v.Name
-		unit.Status = v.Status
 
 		Update = append(Update, unit)
 	}

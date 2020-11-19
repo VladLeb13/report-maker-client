@@ -68,8 +68,6 @@ func fillBoard() {
 	}
 	for _, v := range hardwareData["board"].(*hardware.Board).Сomponents {
 		Board.Manufacturer = v.Manufacturer
-		Board.Model = v.Model
-		Board.PartNumber = v.PartNumber
 		Board.Product = v.Product
 		Board.SerialNumber = v.SerialNumber
 		Board.Version = v.Version
@@ -121,9 +119,7 @@ func fillRAMs() {
 		unit.DeviceLocator = v.DeviceLocator
 		unit.FormFactor = v.FormFactor
 		unit.Manufacturer = v.Manufacturer
-		unit.Model = v.Model
 		unit.Name = v.Name
-		unit.OtherIdentifyingInfo = v.OtherIdentifyingInfo
 		unit.PartNumber = v.PartNumber
 		unit.Speed = v.Speed
 

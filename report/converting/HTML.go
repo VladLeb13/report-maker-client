@@ -98,6 +98,12 @@ func addStyle() {
 			border-collapse: collapse;
 			text-align: left;
 		}
+		table.tfmt2{
+			word-break: break-all;
+		}
+		td.eventMsg{
+			width: 30%;
+		}
 			
 		th {
 			font-weight: normal;

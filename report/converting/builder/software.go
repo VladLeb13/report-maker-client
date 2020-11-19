@@ -89,7 +89,7 @@ func addStartup() string {
 func addUpdate() string {
 	var builder strings.Builder
 	builder.WriteString(" <table class=\"tfmt\">")
-	builder.WriteString("<th>ID</th><th>Описание</th><th>Пользователь</th><th>Дата установки</th><th>Комментарий</th><th>Статус</th><th>Наименование</th>")
+	builder.WriteString("<th>ID</th><th>Описание</th><th>Пользователь</th><th>Дата установки</th>")
 	builder.WriteString("<tbody>")
 
 	for _, unit := range soft.Updates {
@@ -108,7 +108,7 @@ func addPrograms() string {
 	var builder strings.Builder
 
 	builder.WriteString("<table class=\"tfmt\">")
-	builder.WriteString(" <th>Наименование</th><th>Подпись</th><th>Описание</th><th>Дата установки</th><th>Каталог установки</th><th>Владелец</th><th>Компания</th><th>Производитель</th><th>Версия</th>")
+	builder.WriteString(" <th>Наименование</th><th>Дата установки</th><th>Каталог установки</th><th>Производитель</th><th>Версия</th>")
 	builder.WriteString("<tbody>")
 
 	for _, unit := range soft.Programs {

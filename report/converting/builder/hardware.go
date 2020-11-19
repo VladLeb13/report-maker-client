@@ -72,7 +72,7 @@ func addRAMs() string {
 	var builder strings.Builder
 
 	builder.WriteString(" <table class=\"tfmt\">")
-	builder.WriteString(" <th>Объем</th><th>Скорость</th><th>Шина</th><th>Номер</th><th>Призводитель</th><th>Модель</th><th>Наименование</th><th>Форм фактор</th><th>Прочее</th>")
+	builder.WriteString(" <th>Объем</th><th>Скорость</th><th>Шина</th><th>Номер</th><th>Призводитель</th><th>Наименование</th><th>Форм фактор</th>")
 	builder.WriteString("<tbody>")
 
 	for _, unit := range hardware.RAMs {

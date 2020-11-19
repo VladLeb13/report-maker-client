@@ -30,11 +30,8 @@ func fillEvents() {
 	for _, v := range eventsData.(*events.Events).List {
 		unit := datalib.Event{}
 
-		unit.CategoryString = v.CategoryString
-		unit.ComputerName = v.ComputerName
 		unit.LogFile = v.LogFile
 		unit.Message = v.Message
-		unit.SourceName = v.SourceName
 		unit.TimeWritten = v.TimeWritten
 		unit.User = v.User
 
