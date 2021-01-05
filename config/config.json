@@ -1,4 +1,8 @@
 {
-        "address": "http://localhost:8080/",
-        "folder": "D:\\Reports"
+        "address": "http://localhost:8080/upload",
+		"folder": "D:\\Reports",
+		"auth": {
+			"login": "client",
+			"password": "clientpass"
+		}
 }

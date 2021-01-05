@@ -25,6 +25,8 @@ func TestPrseConfig(t *testing.T) {
 
 	fmt.Println("folder: ", cnf.SavingFolder)
 	fmt.Println("server: ", cnf.ServerAddress)
+	fmt.Println("login: ", cnf.Auth.Login)
+	fmt.Println("password: ", cnf.Auth.Password)
 }
 
 func TestCreateReport(t *testing.T) {
