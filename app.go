@@ -25,8 +25,15 @@ func main() {
 	}
 
 	report.Create(&ctx)
+
 	converting.HTML(&ctx)
+	err = converting.JSON(&ctx)
+
 	report.Save(&ctx)
+
+	if err == nil {
+		report.Send(&ctx)
+	}
 
 	return
 }
