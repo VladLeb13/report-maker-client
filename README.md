@@ -1,1 +1,2 @@
 # report-maker-client
+### An application for Windows that collects data about software and hardware resources to generate a report in the form of an html document and send it to the server (github.com/VladLeb13/report-maker-server)
